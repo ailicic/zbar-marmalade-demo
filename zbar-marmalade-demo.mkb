@@ -1,0 +1,38 @@
+#!/usr/bin/env mkb
+
+option module_path="../zbar-marmalade;"
+
+files
+{
+	README.txt
+
+	(src)
+	main.cpp
+
+	[UI]
+	(data)
+	UI.group
+	main.ui
+	(data/iwui_style)
+	iwui_propertysets.itx
+}
+
+subprojects
+{
+    iwui
+	iw2d
+	zbar
+}
+
+assets
+{
+	(data-ram/data-gles1)
+	ui.group.bin
+	iwui_style/style.group.bin
+}
+
+#### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
+deployments
+{
+	["Default"]
+}
