@@ -9,12 +9,8 @@ files
 	(src)
 	main.cpp
 
-	[UI]
 	(data)
-	UI.group
 	main.ui
-	(data/iwui_style)
-	iwui_propertysets.itx
 }
 
 subprojects
