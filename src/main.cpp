@@ -7,10 +7,6 @@ using namespace IwNUI;
 #include "s3eCamera.h"
 #include "zbar.h"
 
-///TODO 
-//Fix g_pTextStatus + g_pBtnScan memory leaks
-//Auto-adjust fonts
-
 //Function prototypes
 void RequestQuit();
 void StartCamera();
@@ -519,16 +515,6 @@ int main() {
 	const CIwSVec2 cameraPreviewWH = CIwSVec2((const int)(screenW * 0.94), (const int)(screenW * 0.94));
 	const CIwSVec2 cameraPreviewXY = CIwSVec2((const int)(screenW * 0.03), (const int)(screenH * 0.22));
 
-	/*
-	//Use fontLarge instead of fontMedium if screen resolution is greater than 320x480
-	if(screenW > 320 && screenH > 480) {
-		pHeaderText->SetFont(pFontLarge);
-		g_pScanButton->SetFont(pFontLarge);
-		pZbarText->SetFont(pFontLarge);
-		g_pQuitButton->SetFont(pFontLarge);
-	}
-	*/
-
 	//Set colors
     IwGxSetColClear(0xff, 0xff, 0xff, 0xff); //Set IwGx to white
 	Iw2DSetColour(0xFF000088); // Set Iw2D to red
@@ -553,12 +539,7 @@ int main() {
 			Iw2DFillRect(cameraPreviewXY, cameraPreviewWH);
 
 		//Update the Native UI
-		pApp->Update();
-
-		//Draw to the surface (Standard EGL-style)
-		//IwGxFlush();
-
-		//IwGxSwapBuffers();
+		pApp->Update(); //Calls IwGxFlush() & IwGxSwapBuffers() within
 		
 		//Allow NUI to render once before starting camera
 		if(!cameraInitialized) {
