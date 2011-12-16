@@ -2,29 +2,32 @@
 
 option module_path="../zbar-marmalade;"
 
+defines
+{
+	IW_GXFONT_TTF
+}
+
 files
 {
 	README.txt
 
 	(src)
 	main.cpp
-
-	(data)
-	main.ui
 }
 
 subprojects
 {
-    iwui
 	iw2d
+	iwnui
 	zbar
+	iwgxfont
 }
 
 assets
 {
 	(data-ram/data-gles1)
 	ui.group.bin
-	iwui_style/style.group.bin
+	iwui_style/iwui_style.group.bin
 }
 
 #### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####

@@ -5,4 +5,5 @@ CIwResGroup
 	.\iwui_resources.group  { inline true }
 	.\iwui_propertysets.itx
 	.\iwui_softkeyboard.ui
+	.\iwui_template.ui
 }

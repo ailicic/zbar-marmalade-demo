@@ -15,6 +15,28 @@
 #
 # Some conditional operations are also permitted, see the
 # S3E documentation for details.
+			
+[s3e]
+#DisableGL=1 #(DOESN'T FORCE SW RENDERING ON DEVICE!) 
+DispFixRot=1 #Force portrait
+MemSize=104857600 #(100 MB)
+#MemSizeDebug=104857600 #(100 MB)
+MemSizeDebug=20971520 #(20 MB)
+
+#THESE DON'T MODIFY THE DEVICE VOLUME!
+#AudioVolDefault=255
+#AudioVolScale=100
+#SoundVolDefault=255
+#SoundVolScale=100
+#VideoVolDefault=255
+#VideoVolScale=100
 
 [GX]
-DataCacheSize=30000
+#DisableSurfaces=1 #(DOESN'T FORCE SW RENDERING ON DEVICE!)
+DataCacheSize=51200 #(50 kB)
+NumTPages=1024 #default=16
+NumTPagesNoMipMap=16 #default=0
+
+[GXFont]
+#CacheTextureMaxSize=1048576
+#TextureMaxSize=1048576

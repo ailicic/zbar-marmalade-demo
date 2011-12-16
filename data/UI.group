@@ -4,7 +4,7 @@ CIwResGroup
 {
 	name "UI"
 	
-	"./iwui_style/style.group"
-
-	"./main.ui"
+	#"iwui_style/style.group"
+	
+	#"main.ui"	#Not needed with NUI
 }
