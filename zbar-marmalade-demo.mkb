@@ -22,7 +22,7 @@ subprojects
 
 assets
 {
-	(data-ram/data-gles1)
+	(data-ram/data-gles1, data-ram/data-sw)
 	ui.group.bin
 	iwui_style/style.group.bin
 }

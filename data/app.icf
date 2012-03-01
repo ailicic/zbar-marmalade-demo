@@ -16,5 +16,12 @@
 # Some conditional operations are also permitted, see the
 # S3E documentation for details.
 
+[s3e]
+DispFixRot=1 #Force portrait
+MemSize=104857600 #(100 MB)
+MemSizeDebug=20971520 #(20 MB)
+
 [GX]
-DataCacheSize=30000
+DataCacheSize=1048576
+NumTPages=1024 #default=16
+NumTPagesNoMipMap=128 #default=0

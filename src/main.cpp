@@ -349,6 +349,19 @@ int32 CameraUpdateCallback(void* eventData, void* userData)
 		//Update the hardware texture buffer:
 		g_pCameraTextureRGB565->ChangeTexels((uint8*)g_pCameraTexelsRGB565, CIwImage::RGB_565); //Not sure why this is required. Same buffer every time...
 		g_pCameraTextureRGB565->Upload();
+
+		//Calculate the frame rate
+		static uint64 lastFPS = s3eTimerGetMs();
+		static uint frame_count = 0;
+
+		++frame_count;
+		uint64 delta_t = s3eTimerGetMs() - lastFPS;
+		if(delta_t > 3000) {
+			s3eDebugTracePrintf("]---> FPS = %3.1f", (float)frame_count / ((float)delta_t / 1000));
+
+			lastFPS = s3eTimerGetMs();
+			frame_count = 0;
+		}
 	}
 	return 0;
 }
